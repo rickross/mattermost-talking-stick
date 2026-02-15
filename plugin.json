@@ -1,0 +1,61 @@
+{
+    "id": "com.gitschool.talking-stick",
+    "name": "Talking Stick",
+    "description": "Dynamic channel moderation and speaking privilege management for live events, panels, and Q&A sessions.",
+    "homepage_url": "https://github.com/mattermost/mattermost-plugin-talking-stick",
+    "support_url": "https://github.com/mattermost/mattermost-plugin-talking-stick/issues",
+    "version": "0.2.6",
+    "min_server_version": "9.0.0",
+    "server": {
+        "executables": {
+            "linux-amd64": "server/dist/plugin-linux-amd64",
+            "linux-arm64": "server/dist/plugin-linux-arm64",
+            "darwin-amd64": "server/dist/plugin-darwin-amd64",
+            "darwin-arm64": "server/dist/plugin-darwin-arm64"
+        }
+    },
+    "webapp": {
+        "bundle_path": "webapp/dist/main.js"
+    },
+    "settings_schema": {
+        "header": "Configure who can bypass talking stick restrictions by default.",
+        "footer": "Uncheck any role to subject them to talking stick permissions.",
+        "settings": [
+            {
+                "key": "AllowSystemAdmins",
+                "display_name": "Allow System Admins to Bypass",
+                "type": "bool",
+                "help_text": "System administrators can always post, regardless of talking stick permissions.",
+                "default": true
+            },
+            {
+                "key": "AllowTeamAdmins",
+                "display_name": "Allow Team Admins to Bypass",
+                "type": "bool",
+                "help_text": "Team administrators can always post, regardless of talking stick permissions.",
+                "default": true
+            },
+            {
+                "key": "AllowChannelAdmins",
+                "display_name": "Allow Channel Admins to Bypass",
+                "type": "bool",
+                "help_text": "Channel administrators can always post, regardless of talking stick permissions.",
+                "default": true
+            },
+            {
+                "key": "AllowBots",
+                "display_name": "Allow Bots to Bypass",
+                "type": "bool",
+                "help_text": "Bot accounts can always post, regardless of talking stick permissions.",
+                "default": true
+            },
+            {
+                "key": "SuppressionPhrases",
+                "display_name": "Message Suppression Phrases",
+                "type": "longtext",
+                "help_text": "Messages containing these phrases will be silently suppressed. Enter one phrase per line (case-insensitive). Default phrases: 'silence is golden', 'helpful progress report'",
+                "default": "silence is golden\nhelpful progress report"
+            }
+        ]
+    }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "mattermost-talking-stick-webapp",
+  "version": "0.2.6",
+  "description": "Talking Stick webapp component",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development --watch",
+    "test": "jest",
+    "check-types": "tsc"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.1.0",
+    "redux": "^4.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.22.0",
+    "@babel/preset-typescript": "^7.23.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.8.0",
+    "style-loader": "^3.3.0",
+    "typescript": "^5.2.0",
+    "webpack": "^5.88.0",
+    "webpack-cli": "^5.1.0"
+  }
+}
